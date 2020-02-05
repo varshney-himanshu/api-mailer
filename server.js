@@ -13,6 +13,10 @@ const Mailer = new mailer(
   process.env.PASSWORD
 );
 
+app.get("/", (req, res) => {
+  res.send("<h1>Node Mailer API");
+});
+
 app.post("/", (req, res) => {
   const { name, email, msg } = req.body;
   const html = `<p>Hey, Someone contacted you from your website, take a look!.</p> <br>
